@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Academic Results</h2>
+    {% if results %}
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Grade</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course, grade, year in results %}
+                    <tr>
+                        <td>{{ course }}</td>
+                        <td>{{ grade }}</td>
+                        <td>{{ year }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results available yet.</p>
+    {% endif %}
+</div>
+</body>
+</html>
